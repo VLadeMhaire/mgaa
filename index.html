@@ -710,7 +710,7 @@
       <h3>Ready to make compliance one less thing to worry about?</h3>
       <p>Book a consultation with our panel of CPAs and legal counsel.</p>
     </div>
-    <a href="mailto:maelenamedez@yahoo.com" class="btn-primary">maelenamedez@yahoo.com</a>
+    <a href="mailto:maelenamedez@yahoo.com" class="btn-primary" onclick="return openWebmail(event, 'maelenamedez@yahoo.com');">maelenamedez@yahoo.com</a>
   </div>
 </section>
 
@@ -754,5 +754,23 @@
   </div>
 </footer>
 
+<script>
+  // Opens Gmail's compose window directly in the visitor's browser
+  // instead of letting the OS prompt "Select an app to open this mailto link".
+  function openWebmail(event, toAddress, subject, body) {
+    event.preventDefault();
+
+    subject = subject || 'Consultation Inquiry';
+    body = body || '';
+
+    var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' +
+      encodeURIComponent(toAddress) +
+      '&su=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+    return false;
+  }
+</script>
 </body>
 </html>
