@@ -45,8 +45,24 @@
   img{max-width:100%;display:block;}
 
   /* subtle circuit-grid backdrop used across dark sections */
+  .hero{
+    position:relative;
+    padding:88px 0 0;
+    overflow:hidden;
+    background:radial-gradient(ellipse 120% 60% at 50% -10%, #142a52 0%, var(--navy-deep) 62%);
+  }
+  .hero-bg-photo{
+    position:absolute; inset:0; z-index:0;
+    background-image:url('building.jpg');
+    background-size:cover; background-position:center 30%;
+    mix-blend-mode:luminosity;
+    opacity:0.22;
+    filter:brightness(0.75) contrast(0.85);
+    -webkit-mask-image:linear-gradient(to bottom, black 0%, black 20%, transparent 70%);
+    mask-image:linear-gradient(to bottom, black 0%, black 20%, transparent 70%);
+  }
   .grid-bg{
-    position:absolute; inset:0;
+    position:absolute; inset:0; z-index:1;
     background-image:
       linear-gradient(var(--line) 1px, transparent 1px),
       linear-gradient(90deg, var(--line) 1px, transparent 1px);
@@ -96,12 +112,6 @@
   }
 
   /* ===== Hero ===== */
-  .hero{
-    position:relative;
-    padding:88px 0 0;
-    overflow:hidden;
-    background:radial-gradient(ellipse 120% 60% at 50% -10%, #142a52 0%, var(--navy-deep) 62%);
-  }
   .hero-inner{
     position:relative;z-index:2;
     max-width:1160px;margin:0 auto;padding:0 28px 70px;
@@ -357,6 +367,7 @@
 </header>
 
 <section class="hero">
+  <div class="hero-bg-photo"></div>
   <div class="grid-bg"></div>
   <div class="hero-inner">
     <div>
