@@ -1,0 +1,103 @@
+---
+---
+<header>
+  <nav>
+    <div class="brand">
+      <div class="brand-mark"><img src="/images/logo.png" alt="MGAA logo" /></div>
+      <div class="brand-text">
+        <span class="full">Medez-Galanto &amp; Associates</span>
+        <span class="tag">YOUR BUSINESS, OUR PRIORITY</span>
+      </div>
+    </div>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#team">Leadership</a>
+      <a href="#philosophy">Approach</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Talk to Us</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Switch theme">
+      <span class="icon-moon" aria-hidden="true">&#9789;</span>
+      <span class="icon-sun" aria-hidden="true">&#9728;</span>
+    </button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#team">Leadership</a>
+    <a href="#philosophy">Approach</a>
+    <a href="#contact" class="mobile-cta">Talk to Us</a>
+  </div>
+</header>
+
+<script>
+  // Theme toggle: dark (default) <-> light, persisted in localStorage
+  (function () {
+    var STORAGE_KEY = 'mgaa-theme';
+    var root = document.documentElement;
+    var toggles = [document.getElementById('themeToggle')].filter(Boolean);
+
+    function applyTheme(theme: string) {
+      if (theme === 'light') {
+        root.setAttribute('data-theme', 'light');
+      } else {
+        root.removeAttribute('data-theme');
+      }
+      var label = theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+      toggles.forEach(function (btn) {
+        btn?.setAttribute('aria-label', label);
+      });
+    }
+
+    var saved = null;
+    try {
+      saved = localStorage.getItem(STORAGE_KEY);
+    } catch (e) {}
+    applyTheme(saved === 'light' ? 'light' : 'dark');
+
+    toggles.forEach(function (btn) {
+      btn?.addEventListener('click', function () {
+        var isLight = root.getAttribute('data-theme') === 'light';
+        var next = isLight ? 'dark' : 'light';
+        applyTheme(next);
+        try {
+          localStorage.setItem(STORAGE_KEY, next);
+        } catch (e) {}
+      });
+    });
+  })();
+
+  // Mobile navigation toggle
+  (function () {
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+
+    function closeMenu() {
+      menu!.classList.remove('open');
+      menu!.hidden = true;
+      btn!.setAttribute('aria-expanded', 'false');
+      btn!.setAttribute('aria-label', 'Open menu');
+    }
+    function openMenu() {
+      menu!.hidden = false;
+      requestAnimationFrame(function () {
+        menu!.classList.add('open');
+      });
+      btn!.setAttribute('aria-expanded', 'true');
+      btn!.setAttribute('aria-label', 'Close menu');
+    }
+    btn.addEventListener('click', function () {
+      var isOpen = menu!.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  })();
+</script>

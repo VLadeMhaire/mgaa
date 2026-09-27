@@ -1,0 +1,49 @@
+---
+const cards = [
+  {
+    icon: '<path d="M9 2h6l1 4H8l1-4z"/><path d="M6 6h12l1 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L6 6z"/><path d="M9 11h6M9 15h4"/>',
+    title: 'Tax Compliance & Advisory',
+    body: 'Navigating BIR regulations, avoiding tax assessments, managing compliance audits, and strategic tax planning.',
+    cta: 'Get a tax review &rarr;',
+  },
+  {
+    icon: '<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18M12 3a9 9 0 0 0 0 18M3 12h18"/>',
+    title: 'Regulatory & Agency Compliance',
+    body: 'Streamlining compliance with BIR, SEC, SSS, PhilHealth, Pag-IBIG, DOLE, and Local Government Units.',
+    cta: 'Check your compliance status &rarr;',
+  },
+  {
+    icon: '<path d="M9 11l2 2 4-4"/><circle cx="12" cy="12" r="9"/>',
+    title: 'Audit & Assurance',
+    body: 'Comprehensive audit readiness, internal controls optimization, and independent financial verification.',
+    cta: 'Request an audit readiness check &rarr;',
+  },
+  {
+    icon: '<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/>',
+    title: 'Corporate Governance & Risk',
+    body: 'Building resilient organizational frameworks to ensure long-term business sustainability.',
+    cta: 'Talk to an advisor &rarr;',
+  },
+];
+---
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">CORE AREAS OF EXPERTISE</span>
+      <h2>Compliance support across every function that touches it</h2>
+      <p>From BIR filings to boardroom governance, our practice areas cover the full compliance lifecycle.</p>
+    </div>
+    <div class="exp-grid">
+      {cards.map((card) => (
+        <a class="exp-card" href="#contact">
+          <div class="exp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5fb2ff" stroke-width="1.8" set:html={card.icon} />
+          </div>
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+          <span class="exp-cta" set:html={card.cta} />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

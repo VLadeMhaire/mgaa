@@ -1,0 +1,37 @@
+---
+const items = [
+  {
+    icon: '&#9878;',
+    title: 'Licensed CPAs & Legal Counsel',
+    body: 'PRC-licensed accountants and BIR-accredited practitioners on every engagement — not junior staff learning on your file.',
+  },
+  {
+    icon: '&#128737;',
+    title: 'BIR & SEC Filing Track Record',
+    body: 'Hundreds of statutory filings, audit responses, and assessment resolutions handled across BIR, SEC, SSS, PhilHealth and Pag-IBIG.',
+  },
+  {
+    icon: '&#9200;',
+    title: 'Deadline-Driven Process',
+    body: 'Every client gets a compliance calendar and proactive reminders — filings go out before the due date, not after a penalty notice.',
+  },
+  {
+    icon: '&#128274;',
+    title: 'Confidential & Audit-Ready Records',
+    body: 'Documentation is organized and retained to your specifications, so you are always ready for a BIR or SEC audit without scrambling.',
+  },
+];
+---
+<section class="trust-band" id="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      {items.map((item) => (
+        <div class="trust-item">
+          <div class="trust-ic" set:html={item.icon} />
+          <h4>{item.title}</h4>
+          <p>{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

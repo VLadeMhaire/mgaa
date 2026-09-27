@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Medez-Galanto & Associates | Regulatory Compliance, Tax, Audit & Advisory',
+  description = 'Medez-Galanto & Associates (MGAA) helps organizations navigate BIR, SEC, SSS, PhilHealth, Pag-IBIG and DOLE compliance, tax advisory, audit, and corporate governance. Schedule a consultation with our panel of CPAs and legal counsel.',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<script is:inline>
+  try {
+    if (localStorage.getItem('mgaa-theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  } catch (e) {}
+</script>
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content="tax compliance Philippines, BIR compliance, SEC compliance, audit and assurance, corporate governance, CPA firm, regulatory compliance advisory" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.mgaa.ph/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Medez-Galanto & Associates | Regulatory Compliance, Tax, Audit & Advisory" />
+<meta property="og:description" content="A multidisciplinary team of CPAs, legal counsel, and business strategists delivering compliance, tax, audit, and advisory services." />
+<meta property="og:url" content="https://www.mgaa.ph/" />
+<meta property="og:locale" content="en_PH" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Medez-Galanto & Associates | Regulatory Compliance, Tax, Audit & Advisory" />
+<meta name="twitter:description" content="Compliance, tax, audit, and advisory for BIR, SEC, SSS, PhilHealth, Pag-IBIG and DOLE." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<slot />
+</body>
+</html>
