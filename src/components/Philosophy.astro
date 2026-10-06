@@ -18,13 +18,13 @@ const pillars = [
 ];
 ---
 <section class="philosophy" id="philosophy">
-  <div class="philosophy-bg-photo"></div>
+  <div class="philosophy-bg-photo" data-parallax="0.12"></div>
   <div class="grid-bg"></div>
   <div class="wrap" style="position:relative;z-index:2;">
-    <span class="kicker">OPERATING PHILOSOPHY</span>
-    <h2>Navigate change. Strengthen governance. Stay audit-ready.</h2>
-    <p class="lede">We empower businesses to operate with clarity and confidence, ensuring their financial operations remain compliant, secure, and prepared for future growth.</p>
-    <div class="pillars">
+    <span class="kicker" data-reveal="kicker">OPERATING PHILOSOPHY</span>
+    <h2 data-split style="--base:100ms">Navigate change. Strengthen governance. Stay audit-ready.</h2>
+    <p class="lede" data-reveal="up" style="--d:450ms">We empower businesses to operate with clarity and confidence, ensuring their financial operations remain compliant, secure, and prepared for future growth.</p>
+    <div class="pillars" data-stagger="140" data-stagger-base="150" data-stagger-type="zoom">
       {pillars.map((p) => (
         <div class="pillar">
           <div class="ico">

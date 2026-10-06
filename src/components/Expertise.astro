@@ -29,11 +29,11 @@ const cards = [
 <section class="expertise" id="expertise">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">CORE AREAS OF EXPERTISE</span>
-      <h2>Compliance support across every function that touches it</h2>
-      <p>From BIR filings to boardroom governance, our practice areas cover the full compliance lifecycle.</p>
+      <span class="kicker" data-reveal="kicker">CORE AREAS OF EXPERTISE</span>
+      <h2 data-split style="--base:100ms">Compliance support across every function that touches it</h2>
+      <p data-reveal="up" style="--d:350ms">From BIR filings to boardroom governance, our practice areas cover the full compliance lifecycle.</p>
     </div>
-    <div class="exp-grid">
+    <div class="exp-grid" data-stagger="120" data-stagger-type="zoom">
       {cards.map((card) => (
         <a class="exp-card" href="#contact">
           <div class="exp-icon">

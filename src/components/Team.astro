@@ -47,11 +47,11 @@ const people = [
 <section class="team" id="team">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">LEADERSHIP &amp; EXPERT PANEL</span>
-      <h2>A multidisciplinary team, in your corner</h2>
-      <p>Certified Public Accountants, legal counsel, and business strategists working as one panel.</p>
+      <span class="kicker" data-reveal="kicker">LEADERSHIP &amp; EXPERT PANEL</span>
+      <h2 data-split style="--base:100ms">A multidisciplinary team, in your corner</h2>
+      <p data-reveal="up" style="--d:350ms">Certified Public Accountants, legal counsel, and business strategists working as one panel.</p>
     </div>
-    <div class="carousel" id="carousel">
+    <div class="carousel" id="carousel" data-reveal="zoom" style="--d:150ms">
       <div class="carousel-viewport" id="carViewport">
         {people.map((p) => (
           <div class="slide">

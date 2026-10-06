@@ -3,10 +3,10 @@
 <section class="cta-band" id="contact">
   <div class="wrap contact-inner">
     <div class="contact-info">
-      <span class="kicker">GET IN TOUCH</span>
-      <h3>Ready to make compliance one less thing to worry about?</h3>
-      <p>Book a consultation with our panel of CPAs and legal counsel. We typically respond within one business day.</p>
-      <ul class="contact-details">
+      <span class="kicker" data-reveal="kicker">GET IN TOUCH</span>
+      <h3 data-split style="--base:100ms">Ready to make compliance one less thing to worry about?</h3>
+      <p data-reveal="up" style="--d:400ms">Book a consultation with our panel of CPAs and legal counsel. We typically respond within one business day.</p>
+      <ul class="contact-details" data-stagger="100" data-stagger-base="450" data-stagger-type="left">
         <li>
           <span class="ci-label">Email</span>
           <a href="mailto:maelenamedez@yahoo.com" id="emailLink">maelenamedez@yahoo.com</a>
@@ -25,7 +25,7 @@
         </li>
       </ul>
     </div>
-    <form class="contact-form" id="contactForm" aria-label="Consultation request form">
+    <form class="contact-form" id="contactForm" data-reveal="right" style="--d:200ms" aria-label="Consultation request form">
       <label for="cf-name">Name<span aria-hidden="true">*</span></label>
       <input type="text" id="cf-name" name="name" required autocomplete="name" />
 
